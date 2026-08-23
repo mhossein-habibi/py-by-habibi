@@ -1,3 +1,3 @@
 # py-by-habibi
 My First public repo.
-craeted to be used as resume
+created to be used as resume
