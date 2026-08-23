@@ -13,7 +13,6 @@ def add_expense():
     }
     expenses.append(expense_item)
     print('✅ Expense Added')
-    #print('======')
 
 def show_report():
     print('\n=== REPORT ===')
@@ -32,7 +31,7 @@ def show_report():
     
     max_amount = max(amounts)
     remaining = budget - total
-    percent = (total / budget) * 100 if budget > 0 else 0
+    percent = (total / budget) * 100
     
     print(f'Total spent: {total} Toman')
     print(f'Budget left: {remaining} Toman')
@@ -40,13 +39,13 @@ def show_report():
     print(f'Largest expense: {max_amount} Toman')
     
     if percent >= 80:
-        print('⚠️ Warning! Only 20% of budget left!')
+        print('Warning! Only 20% of budget left!')
     if total >= budget:
-        print('💀 Budget exhausted! Stop spending.')
+        print('Budget exhausted! Stop spending.')
     #print('======')
 
 def top_categories():
-    print('\n=== TOP CATEGORIES ===')
+    print('=== TOP CATEGORIES ===')
     if not expenses:
         print("No expenses yet.")
         return
@@ -57,7 +56,7 @@ def top_categories():
         amt = item['amount']
         cat_totals[cat] = cat_totals.get(cat, 0) + amt
     
-    sorted_cats = sorted(cat_totals.items(), key=lambda x: x[1], reverse=True)
+    sorted_cats = cat_totals.items()
     
     print("Most spending categories:")
     for i, (cat, amt) in enumerate(sorted_cats[:3], 1):
