@@ -42,6 +42,6 @@ while attempts > 0 and '_' in hidden_answer:
 if not attempts > 0:
     print(f'your attempts: {attempts}\nYOU LOST!')
 
-if '_' not in hidden_answer:
+if not '_' in hidden_answer:
     print('Congrajulations, you win!')
     print(f'Answer is: {answer}')
